@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 export default async (req, res) => {
     const { category, pageSize } = req.query;
-    const apiKey = "3bca7f3084a9431cb70c02edff239379";
+    const apiKey = process.env.VITE_NEWS_API_KEY;
 
     if (!apiKey) {
         res.status(500).json({ error: "API key is not configured" });
